@@ -45,6 +45,7 @@ public class ClientApplication {
 			
 			while (System.nanoTime() < nextTime) {
 				Thread.yield();
+				// Thread.sleep(0, nextTime-ystem.nanoTime());
 			}
 			nextTime = nextTime + interval;
 		}
@@ -61,6 +62,7 @@ public class ClientApplication {
 		System.out.println("Target qps: "+qps);
 		
 		run(serverHost, timeout, qps);
+		
 //		int parallelism = ForkJoinPool.getCommonPoolParallelism();
 //		ForkJoinPool forkJoinPool = new ForkJoinPool(parallelism);
 //		for (int i=0; i<parallelism; i++) {
