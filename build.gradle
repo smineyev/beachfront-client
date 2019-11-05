@@ -26,6 +26,6 @@ application {
 }
 
 run {
-  args = [ "localhost", "1000" ]
+  args = [ project.property('param.serverHost'), project.property('param.timeout'),  project.property('param.qps') ]
 }
 
